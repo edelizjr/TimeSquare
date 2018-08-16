@@ -10,7 +10,10 @@ namespace TimeSquare.Interfaces
     {
         Task<IEnumerable<Note>> GetAllNotes();
 
+        Task<IEnumerable<object>> GetAllNotesCounts();
+
         Task<Note> GetNote(string id);
+
 
         // query after multiple parameters
         Task<IEnumerable<Note>> GetNote(string bodyText, DateTime updatedFrom, long headerSizeLimit);

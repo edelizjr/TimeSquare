@@ -11,20 +11,20 @@ namespace TimeSquare.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class NotesController : Controller
+    public class TestsController : Controller
     {
         private readonly INoteRepository _noteRepository;
 
-        public NotesController(INoteRepository noteRepository)
+        public TestsController(INoteRepository noteRepository)
         {
             _noteRepository = noteRepository;
         }
 
         [NoCache]
         [HttpGet]
-        public async Task<IEnumerable<Note>> Get()
+        public async Task<IEnumerable<object>> Get()
         {
-            return await _noteRepository.GetAllNotes();
+            return await _noteRepository.GetAllNotesCounts();// GetAllNotes();
         }
 
         // GET api/notes/5

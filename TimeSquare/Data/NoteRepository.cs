@@ -32,6 +32,22 @@ namespace TimeSquare.Data
             }
         }
 
+        public async Task<IEnumerable<object>> GetAllNotesCounts()
+        {
+            try
+            {
+                return await _context.Notes.Aggregate()
+                    .Project(r => new { r.Result })
+                    .Group(v => v.Result, g => new { g.Key, Count = g.Count() })
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // log or manage the exception
+                throw ex;
+            }
+        }
+
         // query after Id or InternalId (BSonId value)
         //
         public async Task<Note> GetNote(string id)
