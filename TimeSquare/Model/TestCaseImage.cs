@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TimeSquare.Model
 {
-    public class NoteImage
+    public class TestCaseImage
     {
         public string Url { get; set; } = string.Empty;
         public string ThumbnailUrl { get; set; } = string.Empty;

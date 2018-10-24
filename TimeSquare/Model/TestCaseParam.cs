@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TimeSquare.Model
 {
-    public class NoteParam
+    public class TestCaseParam
     {
         public string Id { get; set; } = string.Empty;
         public string Body { get; set; } = string.Empty;

@@ -45,7 +45,7 @@ namespace TimeSquare
                 options.Database = Configuration.GetSection("MongoConnection:Database").Value;
             });
 
-            services.AddTransient<INoteRepository, NoteRepository>();
+            services.AddTransient<ITestCaseRepository, TestCaseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

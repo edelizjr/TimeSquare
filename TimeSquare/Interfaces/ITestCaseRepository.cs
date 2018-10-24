@@ -6,20 +6,34 @@ using TimeSquare.Model;
 
 namespace TimeSquare.Interfaces
 {
-    public interface INoteRepository
+    public interface ITestCaseRepository
     {
-        Task<IEnumerable<Note>> GetAllNotes();
+        Task<IEnumerable<TestCase>> GetAllNotes();
 
-        Task<IEnumerable<object>> GetAllNotesCounts();
+        //Task<IEnumerable<object>> GetResultsCount();
 
-        Task<Note> GetNote(string id);
+        // Task<IEnumerable<TestCase>> GetAllTestsByDate(string date);
+
+        Task<IEnumerable<object>> GetResultsCountByDate(string startDate, string endDatestring, string sort, int limit);
+
+        //Task<IEnumerable<TestCase>> GetAllTestsByDate(string startDate, string endDate);
+
+        Task<IEnumerable<object>> GetAllTestsByDate(string date, string endDate, string sort, int limit);
+
+
+
+
+
+
+
+        Task<TestCase> GetNote(string id);
 
 
         // query after multiple parameters
-        Task<IEnumerable<Note>> GetNote(string bodyText, DateTime updatedFrom, long headerSizeLimit);
+        Task<IEnumerable<TestCase>> GetNote(string bodyText, DateTime updatedFrom, long headerSizeLimit);
 
         // add new note document
-        Task AddNote(Note item);
+        Task AddNote(TestCase item);
 
         // remove a single document / note
         Task<bool> RemoveNote(string id);
